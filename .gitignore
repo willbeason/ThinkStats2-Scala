@@ -1,0 +1,7 @@
+*.history
+*.iml
+
+.idea/*
+
+code/project/target/*
+code/target/*
