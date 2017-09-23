@@ -12,22 +12,18 @@ live <- preg[preg[, "outcome"] == 1, ]
 
 # Here's the histogram of birth weights in pounds. Notice that hist works with
 # any numeric vector.
-myhist(live[, "birthwgt_lb"], xlab="Birth weight (pounds)", ylab = "Count",
-       main=NA, breaks=0:15)
-legend("topright", "Live Births", fill=mycolors[1], border=mytints[1],
-       bty="n")
+myhist(live[, "birthwgt_lb"], xlab="Birth weight (pounds)", breaks=0:15)
+mylegend("Live Births")
 
 # Before plotting the ages, I'll apply floor to round down.
 myhist(live[, "agepreg"], breaks=10:45, xlab="Mother's Age (Years)", ylab="Count",
        main="Mother's Age at Baby's Birth")
-legend("topright", "Live Births", fill=mycolors[1], border=mytints[1],
-       bty="n")
+mylegend("Live Births")
 
 # As an exercise, plot the histogram of pregnancy lengths (column prglngth).
 myhist(live[, "prglngth"], breaks=0:50, xlab="Pregnancy Length (Weeks)",
        ylab="Count", main="Length of Pregnancy", xlim=c(27,45))
-legend("topright", "Live Births", fill=mycolors[1], border=mytints[1],
-       bty="n")
+mylegend("Live Births")
 
 # R provides head(), which select the lowest values and their frequencies.
 head(table(live[, "prglngth"]), n=10)
@@ -41,14 +37,12 @@ firsts = live[live[, "birthord"] == 1, ]
 others = live[live[, "birthord"] != 1, ]
 
 myhist(firsts[, "prglngth"], breaks=0:50, xlab="Pregnancy Length (Weeks)",
-       ylab="Count", main="Length of Pregnancy", xlim=c(27,45))
-legend("topright", "First Live Births", fill=mycolors[1], border=mytints[1],
-       bty="n")
+       main="Length of Pregnancy", xlim=c(27,45))
+mylegend("First Live Births")
 
 myhist(others[, "prglngth"], breaks=0:50, xlab="Pregnancy Length (Weeks)",
-       ylab="Count", main="Length of Pregnancy", xlim=c(27,45))
-legend("topright", "Other Live Births", fill=mycolors[1], border=mytints[1],
-       bty="n")
+       xlim=c(27,45))
+mylegend("Other Live Births")
 
 # Methods to compute summary statistics:
 mean(live[, "prglngth"])
@@ -79,21 +73,20 @@ resp <- read.csv("data/2002FemResp.csv")
 
 # Make a histogram of totincr the total income for the respondent's family. To
 # interpret the codes see the codebook.
-myhist(resp[, "totincr"], xlab="Income Bracket", ylab="Count",
-       main = "Income Bracket of Respondent")
+myhist(resp[, "totincr"], xlab="Income Bracket",
+       main = "Income Bracket of Respondents")
 
 # Make a histogram of age_r, the respondent's age at the time of interview.
-myhist(resp[, "age_r"], xlab="Age", ylab="Count", breaks=14:45,
-       main = "Age of Respondent")
+myhist(resp[, "age_r"], xlab="Age", breaks=14:45, main = "Age of Respondents")
 
 # Make a histogram of numfmhh, the number of people in the respondent's
 # household.
-myhist(resp[, "numfmhh"], xlab="People in Household", ylab="Count",
-       breaks=0:9, main = "Household Size")
+myhist(resp[, "numfmhh"], xlab="People in Household", breaks=0:9,
+       main = "Household Size")
 
 # Make a histogram of parity, the number of children borne by the respondent.
 # How would you describe this distribution?
-myhist(resp[, "parity"], xlab="Number of Children", ylab="Count",
+myhist(resp[, "parity"], xlab="Number of Children",
        breaks=0:22, main = NA)
 
 # Use Hist.Largest to find the largest values of parity.
@@ -106,7 +99,7 @@ tail(table(resp[, "parity"]), n=10)
 # Use totincr to select the respondents with the highest income (level 14).
 # Plot the histogram of parity for just the high income respondents.
 high_income = resp[resp[, "totincr"] == 14, ]
-myhist(high_income[, "parity"], xlab="Number of Children", ylab="Count",
+myhist(high_income[, "parity"], xlab="Number of Children",
        breaks=0:8, main = "Number of Children in High Income Families")
 
 low_income = resp[resp[, "totincr"] != 14, ]

@@ -9,4 +9,7 @@ preg <- read.csv("data/2002FemPreg.csv")
 live <- preg[preg[, "outcome"] == 1, ]
 
 # Here's the histogram of birth weights:
+myhist(live[, "birthwgt_lb"], xlab="Weight at Birth")
+mylegend("Live Births")
+
 
