@@ -12,4 +12,9 @@ live <- preg[preg[, "outcome"] == 1, ]
 myhist(live[, "birthwgt_lb"], xlab="Weight at Birth")
 mylegend("Live Births")
 
+# To normalize the disrtibution, we could use the probability option.
+# The result is a Probability Mass Function (PMF).
+myhist(live[, "birthwgt_lb"], xlab="Weight at Birth", probability=TRUE,
+       ylab=NA)
+
 

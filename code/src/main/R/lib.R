@@ -3,9 +3,9 @@
 mycolors <- c("#70a845", "#8161cc")
 mytints <- c("#9CCD76", "#A388E0")
 
-myhist <- function(x, ...) {
-  hist(x, col=mycolors[1], border=mytints[1], ylab="Count", right=FALSE,
-       main=NA, ...)
+myhist <- function(x, ylab="Count", ...) {
+  hist(x, col=mycolors[1], border=mytints[1], right=FALSE,
+       main=NA, ylab=ylab, ...)
 }
 
 mybarplot <- function(x, ...) {
