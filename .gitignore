@@ -2,6 +2,7 @@
 *.iml
 
 .idea/*
+data/*
 
 code/project/*
 code/target/*
