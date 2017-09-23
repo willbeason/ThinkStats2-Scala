@@ -1,5 +1,7 @@
 *.history
 *.iml
+*.RData
+*.Rhistory
 *.Rproj
 
 .idea/*
