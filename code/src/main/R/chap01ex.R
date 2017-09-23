@@ -1,8 +1,7 @@
 # Exercises for Chapter 1 of ThinkStats in R.
-setwd("data")
 
 # Read NSFG data into a data.frame.
-preg <- read.csv("2002FemPreg.csv")
+preg <- read.csv("data/2002FemPreg.csv")
 
 # Print the column names.
 colnames(preg)
@@ -46,7 +45,7 @@ preg[, "totalwgt_kg"] <- preg[, "totalwgt_lb"] * 0.453592
 mean(preg[, "totalwgt_kg"], na.rm=TRUE)
 
 # Read  the female respondents file into a data.frame.
-resp <- read.csv("2002FemResp.csv")
+resp <- read.csv("data/2002FemResp.csv")
 
 # Select the age_r column from resp and print the value counts. How old are
 # the youngest and oldest respondents?

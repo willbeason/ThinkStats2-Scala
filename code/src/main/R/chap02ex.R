@@ -1,26 +1,13 @@
 # Exercises for Chapter 2 of ThinkStats in R.
 library(effsize)
 
-setwd("data")
-
-mycolors <- c("#70a845", "#8161cc")
-mytints <- c("#9CCD76", "#A388E0")
-
-myhist <- function(x, ...) {
-  hist(x, col=mycolors[1], border=mytints[1], right=FALSE, ...)
-}
-
-mybarplot <- function(x, ...) {
-  num_rows <- dim(x)[1]
-  barplot(x, col=mycolors[1:num_rows], border=mytints[1:num_rows],
-          space=c(0,1), beside=TRUE, ...)
-}
+source("code/src/main/R/lib.R")
 
 # First, I'll load the data from the pregnancy file and select the records for
 # live births.
 
 # Read NSFG data into a data.frame.
-preg <- read.csv("2002FemPreg.csv")
+preg <- read.csv("data/2002FemPreg.csv")
 live <- preg[preg[, "outcome"] == 1, ]
 
 # Here's the histogram of birth weights in pounds. Notice that hist works with
@@ -88,7 +75,7 @@ cohen.d(firsts[, "prglngth"], others[, "prglngth"])
 cohen.d(firsts[, "totalwgt_lb"], others[, "totalwgt_lb"], na.rm=TRUE)
 
 # For the next few exercises, we'll load the respondent file:
-resp <- read.csv("2002FemResp.csv")
+resp <- read.csv("data/2002FemResp.csv")
 
 # Make a histogram of totincr the total income for the respondent's family. To
 # interpret the codes see the codebook.
