@@ -1,8 +1,10 @@
 *.history
 *.iml
+*.Rproj
 
 .idea/*
 data/*
 
 code/project/*
 code/target/*
+.Rproj.user

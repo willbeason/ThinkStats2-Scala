@@ -1,10 +1,5 @@
 # Exercises for Chapter 1 of ThinkStats in R.
-
-setwd("C:/Users/Will/IdeaProjects/ThinkStats2-Scala/data")
-
-myhist <- function(x, ...) {
-  hist(x, col="#70a845", border="#9CCD76", ...)
-}
+setwd("data")
 
 # Read NSFG data into a data.frame.
 preg <- read.csv("2002FemPreg.csv")
